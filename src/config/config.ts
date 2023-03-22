@@ -4,5 +4,12 @@ export const config = {
     redisPort: +process.env.REDIS_PORT!,
     redisHost: process.env.REDIS_HOST!,
     nodeMailerHost: process.env.NODEMAILER_HOST!,
-    nodeMailerPort: +process.env.NODEMAILER_PORT!
+    nodeMailerPort: +process.env.NODEMAILER_PORT!,
+    joiOptions: {
+        errors: {
+            wrap: { label: '' },
+        },
+        abortEarly: true,
+    },
+
 }
