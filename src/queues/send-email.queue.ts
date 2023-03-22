@@ -13,11 +13,10 @@ export class SendEmailQueueProcessor{
     
     @Process()
     async processEmail(job: Job<any>) {
-        console.log("hhjhjhjhjh")
         logInfoMessage('==> Processing send email');
         try {
             await this.emailService.send(job.data) 
-            logInfoMessage(`<== Done processing ${JSON.stringify(job)}`)
+            logInfoMessage(`<== Done processing ${JSON.stringify(job.id)}`)
             return true
         } catch (error) {
             logError(`An error occurred in send email queue processor:: ${job}==> ${error}`)

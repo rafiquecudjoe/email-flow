@@ -18,7 +18,7 @@ import { ConfigModule } from '@nestjs/config';
     BullModule.forRoot({
       redis: {
         host: config.redisHost,
-        port: +config.redisPort
+        port: config.redisPort
       },
       defaultJobOptions: {
         removeOnComplete: true,
